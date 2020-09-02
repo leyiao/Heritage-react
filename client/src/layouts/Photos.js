@@ -3,12 +3,14 @@ import CommentTextArea from '../components/CommentTextArea';
 import ArtifactDetail from '../components/ArtifactDetail';
 import TagsArea from '../components/TagsArea';
 import { faEdit } from '@fortawesome/free-solid-svg-icons';
+import Comment from '../components/Comment';
 import {
   Container,
   Row,
   Col,
   Button,
   Modal,
+  Card,
   Form,
   ToggleButton,
   ToggleButtonGroup,
@@ -147,6 +149,7 @@ class Photos extends Component {
       });
       //----------------- Generate all possible Year &&  Location including null values && Tagging Tags------------------//
       axios.get('/api/photo-all').then(resp => {
+        var tempArr = [];
         var LocationArr = [];
         var EventArr = [];
 
@@ -154,7 +157,7 @@ class Photos extends Component {
           //Event Tags
 
           var tags = resp.data[i].Tags;
-          if (tags !== null) {
+          if (tags != null) {
             var tagsSplit = tags.split(',');
 
             tagsSplit.forEach(function(data) {
@@ -166,7 +169,7 @@ class Photos extends Component {
           }
 
           //Location
-          if (LocationArr.includes(resp.data[i].Geotag) === true) {
+          if (LocationArr.includes(resp.data[i].Geotag) == true) {
             continue;
           } else if (resp.data[i].Geotag == null) {
             continue;
@@ -195,7 +198,7 @@ class Photos extends Component {
     axios.get('/api/image-all').then(resp => {
       var tempArr = [];
       for (var i = 0; i < resp.data.length; i++) {
-        if (resp.data[i].Artifact_ArtifactID === this.props.match.params.id) {
+        if (resp.data[i].Artifact_ArtifactID == this.props.match.params.id) {
           tempArr.push(resp.data[i]);
         }
       }
@@ -243,7 +246,7 @@ class Photos extends Component {
   handleAddition(tags) {
     var temp_Json = tags;
     var checkTag = temp_Json.id.split(':');
-    if (checkTag[0] === 'Tags') {
+    if (checkTag[0] == 'Tags') {
     } else {
       temp_Json.id = 'Tags: ' + tags.id;
       temp_Json.text = 'Tags: ' + tags.text;
@@ -264,12 +267,12 @@ class Photos extends Component {
     });
   }
   LocationSelection(e) {
-    if (e.target.value === 1) {
+    if (e.target.value == 1) {
       this.setState({
         Existing_location: false,
       });
     }
-    if (e.target.value === 2) {
+    if (e.target.value == 2) {
       this.setState({
         edit_new_Location: '',
         Existing_location: true,
@@ -278,7 +281,7 @@ class Photos extends Component {
     }
   }
   onChangeChips_Location = chips_Location => {
-    if (chips_Location.length === 0) {
+    if (chips_Location.length == 0) {
       this.setState({
         Location_Suggestion: this.state.Location,
       });
@@ -289,7 +292,7 @@ class Photos extends Component {
   };
 
   onChangeChips_Owner = chips_Owner => {
-    if (chips_Owner.length === 0) {
+    if (chips_Owner.length == 0) {
       this.setState({
         FamilyMember_Suggestion: this.state.FamilyMember_FirstName,
       });
@@ -302,18 +305,18 @@ class Photos extends Component {
 
   watch_Owner() {
     // watcher watch for search chips and restricts it to 1 tags
-    if (this.state.chips_Owner !== undefined) {
+    if (this.state.chips_Owner != undefined) {
       var maximum_chips = 1;
-      if (this.state.chips_Owner.length === maximum_chips) {
+      if (this.state.chips_Owner.length == maximum_chips) {
         this.state.FamilyMember_Suggestion = [];
       }
     }
   }
   watch_Location() {
     // watcher watch for search chips and restricts it to 1 tags
-    if (this.state.chips_Location !== undefined) {
+    if (this.state.chips_Location != undefined) {
       var maximum_chips = 1;
-      if (this.state.chips_Location.length === maximum_chips) {
+      if (this.state.chips_Location.length == maximum_chips) {
         this.state.Location_Suggestion = [];
       }
     }
@@ -337,7 +340,7 @@ class Photos extends Component {
     axios
       .put(url, obj)
       .then(response => {
-        if (response.data === 'success') {
+        if (response.data == 'success') {
           window.location.reload();
         }
       })
@@ -348,7 +351,7 @@ class Photos extends Component {
 
   onChangeTitle(e) {
     //Artifact name
-    if (e.target.placeholder === 'Artifact name') {
+    if (e.target.placeholder == 'Artifact name') {
       this.setState({
         edit_title: e.target.value,
         TitleValidate: true,
@@ -356,41 +359,41 @@ class Photos extends Component {
     }
 
     //Date
-    if (e.target.placeholder === 'DD (Optional)') {
+    if (e.target.placeholder == 'DD (Optional)') {
       this.setState({
         edit_day: e.target.value,
         DayValidate: true,
       });
     }
-    if (e.target.placeholder === 'MM (Optional)') {
+    if (e.target.placeholder == 'MM (Optional)') {
       this.setState({
         edit_month: e.target.value,
         MonthValidate: true,
       });
     }
     //Year
-    if (e.target.placeholder === 'YYYY') {
+    if (e.target.placeholder == 'YYYY') {
       this.setState({
         edit_year: e.target.value,
         YearValidate: true,
       });
     }
     //Accuracy
-    if (e.target.id === 'formSelectCat') {
+    if (e.target.id == 'formSelectCat') {
       this.setState({
         edit_accuracy: e.target.value,
         AccuracyValidate: true,
       });
     }
 
-    if (e.target.placeholder === 'Detailed artifact description...') {
+    if (e.target.placeholder == 'Detailed artifact description...') {
       this.setState({
         edit_description: e.target.value,
         DescriptionValidate: true,
       });
     }
     //Location
-    if (e.target.placeholder === 'Example: Melbourne') {
+    if (e.target.placeholder == 'Example: Melbourne') {
       this.setState({
         edit_new_Location: e.target.value,
       });
