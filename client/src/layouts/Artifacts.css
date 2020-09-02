@@ -1,0 +1,22 @@
+.columnDivParent {
+    display: flex;
+    flex-direction: row;
+}
+
+.columnDivRight {
+    display:flex;
+    flex-direction: column;
+    margin-left: 1em;
+}
+
+.artifactTabContent {
+    border: 2px solid #f7f7f7;
+    border-radius: 8px;
+    padding: 1em;
+}
+
+.categoryHeader {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}

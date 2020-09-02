@@ -1,0 +1,44 @@
+.Album{
+    margin-left: 2%; 
+    margin-top: 30px;
+    width: 100%;
+    height: 60%
+  }
+  .imgbg{
+    /* border: 1px #f3f3f3 solid; */
+    border: 1px red;
+    position: relative;
+    margin-top: 16%;
+    margin-bottom: 10%;
+    width: 190px;
+    height: 150px;
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s linear;
+  }
+  
+  .imgbg img{
+    position: absolute;
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s linear;
+    left: 50%; 
+    top: 50%;
+    width: 95%;
+    transform: translate(-50%, -50%);
+  }
+  
+  .slick-slide.slick-center {
+    transform: scale(1.5);
+    transition: all 0.3s linear;
+    opacity: 1; 
+    margin-top: 20px;
+}
+  .slick-slide{ 
+    transform: scale(1);
+    opacity: 0.5;
+    transition: opacity 150ms linear;
+  }
+  .slick-dots {
+    font-size: 10px;
+    color: rgba(0, 0, 0, 0.3);
+    opacity: 0.5;
+  }

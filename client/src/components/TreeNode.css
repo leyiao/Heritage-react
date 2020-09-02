@@ -1,0 +1,36 @@
+
+.TreeNode
+{
+    width: 52px;
+    height: 60px;
+    text-align: center;
+    margin-bottom: 2px;
+}
+.NodeName{
+    text-align: center;
+    position: relative;
+    font-size: 10px;
+    color: black;
+    font-weight: bold;  
+    top: -5px;
+    margin-bottom: -26px;      
+  }
+
+ .male > .img {
+    width: 50px;
+    height: 50px;
+    border: 4px solid rgb(45, 113, 214);
+    position: relative;
+    border-radius: 100%;
+  }
+  .female > .img{
+    width: 50px;
+    height: 50px;
+    border: 4px solid rgb(207, 72, 146);
+    position: relative;
+    border-radius: 100%;
+}
+.popover{
+  width: 200px;
+  height: 105px;
+}
