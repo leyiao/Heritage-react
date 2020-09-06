@@ -195,7 +195,7 @@ class FamilyTree extends Component {
                         <TreeNode margin = "50px" name = {"Alicia"} gender = "female" userID = "23" src="https://images.unsplash.com/photo-1518183301734-84c04db2d41d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1052&q=80" />
                     </Col>
                     <Col md={{ span: 0, offset: 0 }}> 
-                        <TreeNode margin = "50px" name = {"Danya"} gender = "female" userID = "24" src="https://data.whicdn.com/images/302058504/large.jpg?t=1511579073" />
+                        <TreeNode margin = "50px" name = {"Danya"} gender = "female" userID = "24" src="https://images.unsplash.com/photo-1567468219153-4b1dea5227ea?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80" />
                     </Col>
                     <Col md={{ span: 1, offset: 0 }}>
                         <TreeNode margin = "20px" name = {"Sara"} gender = "female" userID = "25" src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1051&q=80" />
